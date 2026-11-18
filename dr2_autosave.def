@@ -1,0 +1,3 @@
+LIBRARY d3dx9_43
+EXPORTS
+    D3DXCompileShader=_D3DXCompileShader@40

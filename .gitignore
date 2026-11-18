@@ -1,0 +1,6 @@
+out/
+dist/
+backup_salvataggi/
+*.vfs
+*.bak
+*.log
