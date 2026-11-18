@@ -37,10 +37,31 @@ Windows may show a warning because the setup is not digitally signed.
 
 To resume from an autosave, open **Load** in the game and pick a slot marked `[AUTO]`.
 
+## Linux and Steam Deck (experimental)
+
+The mod runs on the Windows version of the game through Proton. Native Linux and macOS versions of the game are not supported.
+
+1. In Steam, open the game's **Properties > Compatibility**, force a Proton version and wait for the download to finish.
+2. Start the game once, then close it.
+3. Download `DR2_Autosave_Mod_1.0_Linux.tar.gz` from the [experimental release](../../releases/tag/v1.0-linux-experimental) and extract it.
+4. Open a terminal in the extracted folder and run:
+
+   ```bash
+   bash install.sh
+   ```
+
+5. In **Properties > General**, set **Launch Options** to:
+
+   ```text
+   WINEDLLOVERRIDES="d3dx9_43=n,b" %command%
+   ```
+
+On Steam Deck, do these steps in Desktop Mode. The on-screen notification is off by default on Linux. Run `bash install.sh --help` to see all options, or `bash install.sh --uninstall` to remove the mod.
+
 ## Requirements
 
-- Windows 10 or 11
-- The current Steam version of Danganronpa 2: Goodbye Despair (`DR2_us.exe`)
+- Windows 10 or 11, or Linux and Steam Deck through Proton
+- The current Steam Windows version of Danganronpa 2: Goodbye Despair (`DR2_us.exe`)
 
 Other versions of the game are detected and refused, so the mod is never installed on a build it does not support.
 
@@ -69,6 +90,7 @@ The setup is written to `dist\DR2_Autosave_Setup.exe`.
 | `notify.h` | In-game notification banner |
 | `vfs.h` | Save file reader |
 | `setup/` | Graphical setup tool (WPF) |
+| `linux/` | Proton installer script, tests and packaging |
 
 ## Disclaimer
 
